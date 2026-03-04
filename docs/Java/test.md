@@ -254,7 +254,7 @@ public LoginResponse login(LoginRequest request) {
 
 如果你使用 Vue 或 React，可以写一个全局的 Axios 拦截器，确保每一笔请求都带上这个“身份证”。
 
-```JavaScript
+```js
 // frontend/src/utils/request.js
 import axios from 'axios';
 import FingerprintJS from '@fingerprintjs/fingerprintjs';
