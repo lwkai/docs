@@ -1,14 +1,12 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "target": "ES2022"
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "baseUrl": "./",
+    "paths": {
+      "@@/*": [".dumi/tmp/*"]
+    }
   },
-  "include": [
-    "src/.vuepress/**/*.ts",
-    "src/.vuepress/**/*.vue"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": [".dumirc.ts"]
 }
