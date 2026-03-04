@@ -4,11 +4,9 @@
 
 # “拦截器（或过滤器）”这种统一处理方式
 
+
+
 ### 职责单一制  和  防御深层化 的原则
-
-
-
-
 
 
 
@@ -116,3 +114,165 @@ public LoginResponse login(LoginRequest request, HttpServletResponse response) {
 - **L1 (公开)**：如首页，不校验 DeviceID。
 - **L2 (普通操作)**：如看评论，校验 DeviceID 但不限流。
 - **L3 (高危)**：如登录、支付，强制校验 DeviceID 且执行严格限流。 拦截器可以根据注解或路径模式（AntPathMatcher）完美实现这种**精细化控制**。
+
+
+
+在大厂的生产环境里，风控拦截器不仅要“拦得住”，还要“跑得快”。为了保证在高并发登录请求下，限流计数不会因为网络延迟或并发导致失效，我们必须使用 **Redis + Lua 脚本**。
+
+以下是为你设计的 `RiskControlInterceptor` 核心实现方案。
+
+------
+
+### 1. 核心：Redis Lua 脚本 (保证原子性)
+
+为什么非要用 Lua？因为 `get`、`incr`、`expire` 这三步如果分开执行，在高并发下会导致计数不准（竞态条件）。Lua 脚本可以像数据库事务一样，把这几步合成一个原子操作。
+
+你可以在项目的 `resources` 目录下新建 `lua/limit.lua`，或者直接在代码中定义：
+
+Lua
+
+```lua
+-- KEYS[1]: 具体的限流 Key (如 limit:ip:1.2.3.4)
+-- ARGV[1]: 允许的最大尝试次数
+-- ARGV[2]: 时间窗口(秒)
+
+local current = redis.call('get', KEYS[1])
+if current and tonumber(current) >= tonumber(ARGV[1]) then
+    return 0 -- 失败：触发限流
+else
+    local res = redis.call('incr', KEYS[1])
+    if tonumber(res) == 1 then
+        redis.call('expire', KEYS[1], ARGV[2])
+    end
+    return 1 -- 成功：计数增加并放行
+end
+```
+
+------
+
+### 2. 拦截器实现：多维度综合判定
+
+我们将 IP 和 DeviceID 放在拦截器。注意：**User 维度的锁定通常留在 Service**，因为拦截器在 `preHandle` 阶段很难优雅地处理复杂的业务登录失败计数，但我们可以把“物理限流”放在这里。
+
+
+```java
+@Component
+@RequiredArgsConstructor
+public class RiskControlInterceptor implements HandlerInterceptor {
+
+    private final RedisTemplate<String, Object> redisTemplate;
+    private final DefaultRedisScript<Long> limitScript; // 注入上面定义的 Lua 脚本
+
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+        // 1. 获取特征码
+        String ip = getClientIp(request);
+        String deviceId = request.getHeader("X-Device-ID");
+        // 也可以从参数中预取 username (可选)
+        String username = request.getParameter("username");
+
+        // 2. IP 维度检查 (每分钟 10 次)
+        checkLimit("limit:ip:" + ip, 10, 60, "操作频繁，请稍后再试");
+
+        // 3. 设备维度检查 (每分钟 5 次 - 更严格)
+        if (StringUtils.isNotBlank(deviceId)) {
+            checkLimit("limit:device:" + deviceId, 5, 60, "当前设备请求过快");
+        }
+        
+        // 4. 用户维度物理限流 (防止针对单个账号的瞬间超高并发爆破)
+        if (StringUtils.isNotBlank(username)) {
+             checkLimit("limit:user:freq:" + username, 20, 60, "账号请求过多");
+        }
+
+        return true;
+    }
+
+    private void checkLimit(String key, int max, int window, String msg) {
+        Long result = redisTemplate.execute(limitScript, Collections.singletonList(key), max, window);
+        if (result == null || result == 0) {
+            throw new BusinessException(429, msg);
+        }
+    }
+
+    private String getClientIp(HttpServletRequest request) {
+        // 大厂规范：考虑负载均衡(Nginx)后的真实IP
+        String ip = request.getHeader("X-Forwarded-For");
+        if (StringUtils.isBlank(ip) || "unknown".equalsIgnoreCase(ip)) {
+            ip = request.getRemoteAddr();
+        }
+        return ip;
+    }
+}
+```
+
+------
+
+### 3. AuthServiceImpl：业务风控逻辑 (精简版)
+
+现在的 `AuthServiceImpl` 只需要处理“密码错误导致的阶梯锁定”，这属于**业务风控**。
+
+
+```java
+public LoginResponse login(LoginRequest request) {
+    String username = request.getUsername();
+    String failKey = "login:fail:user:" + username;
+
+    // 1. 检查是否处于阶梯锁定状态 (5次失败后的15分钟锁定)
+    Integer failCount = getFailCount(failKey);
+    if (failCount >= 5) {
+        throw new BusinessException(423, "账号已锁定，请稍后再试");
+    }
+
+    // 2. 验证码校验 (3次失败后的强制要求)
+    if (failCount >= 3) {
+        validateCaptcha(request); 
+    }
+
+    try {
+        // 3. 数据库逻辑...
+        // 成功则删除 failKey
+    } catch (BadCredentialsException e) {
+        // 4. 只有认证失败才记录，逻辑更严密
+        updateFailCount(failKey);
+        throw e;
+    }
+}
+```
+
+------
+
+### 4. 为什么要这样分层？
+
+- **拦截器 = 物理屏障**：它的目标是**保护服务器资源**。不管你账号对不对，只要你发得太快，我就把你当成机器人乱棍打死，不让你消耗 CPU 和数据库连接。
+- **Service = 业务逻辑**：它的目标是**账户安全**。它处理的是“密码输错”这种正常用户也可能发生的操作，提供的是“验证码”、“账号找回”等有温度的业务流程。
+
+
+
+
+
+## 前端生成 `X-Device-ID`
+
+如果你使用 Vue 或 React，可以写一个全局的 Axios 拦截器，确保每一笔请求都带上这个“身份证”。
+
+```JavaScript
+// frontend/src/utils/request.js
+import axios from 'axios';
+import FingerprintJS from '@fingerprintjs/fingerprintjs';
+
+const service = axios.create();
+
+service.interceptors.request.use(async config => {
+    // 优先从本地缓存取，没有则生成
+    let deviceId = localStorage.getItem('X-Device-ID');
+    if (!deviceId) {
+        const fp = await FingerprintJS.load();
+        const result = await fp.get();
+        deviceId = result.visitorId;
+        localStorage.setItem('X-Device-ID', deviceId);
+    }
+    
+    // 注入请求头
+    config.headers['X-Device-ID'] = deviceId;
+    return config;
+});
+```
