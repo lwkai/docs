@@ -31,7 +31,7 @@ jobs:
             - name: 安装依赖
               run: |
                   corepack enable
-                  pnpm install --forzen-lockfile
+                  pnpm install --frozen-lockfile
 
             - name: 构建文档
               env:
