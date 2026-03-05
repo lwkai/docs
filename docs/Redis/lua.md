@@ -45,7 +45,7 @@ return 1 -- 成功通过
 
 ------
 
-# 🟢 参数说明
+## 🟢 参数说明
 
 ```lua
 -- KEYS[1]: IP 限流 Key, KEYS[2]: Device 限流 Key, KEYS[3]: NAT 集合 Key
@@ -73,7 +73,7 @@ return 1 -- 成功通过
 
 ------
 
-# 🟢 第 1 部分：更新 NAT 设备集合（静默采集）
+## 🟢 第 1 部分：更新 NAT 设备集合（静默采集）
 
 ```lua
 if ARGV[4] ~= "" then
@@ -137,7 +137,7 @@ redis.call('EXPIRE', KEYS[3], ARGV[3])
 
 ------
 
-# 🟢 第 2 部分：检查设备限流（高压线）
+## 🟢 第 2 部分：检查设备限流（高压线）
 
 ```lua
 local dev_curr = redis.call('get', KEYS[2])
@@ -190,7 +190,7 @@ return -1 -- 错误码 -1: 设备被封
 
 ------
 
-# 🟢 第 3 部分：检查 IP 限流（基础线）
+## 🟢 第 3 部分：检查 IP 限流（基础线）
 
 ```lua
 local ip_curr = redis.call('get', KEYS[1])
@@ -220,13 +220,13 @@ return -2 -- 错误码 -2: IP 被封
 
 ------
 
-# 🟢 第 4 部分：计数增加
+## 🟢 第 4 部分：计数增加
 
 只有前面都没触发封禁，才会执行这里。
 
 ------
 
-## 🟡 设备计数增加
+### 🟡 设备计数增加
 
 ```lua
 local res_dev = redis.call('INCR', KEYS[2])
@@ -266,7 +266,7 @@ if tonumber(res_dev) == 1 then redis.call('EXPIRE', KEYS[2], ARGV[3]) end
 
 ------
 
-## 🟡 IP 计数增加
+### 🟡 IP 计数增加
 
 ```lua
 local res_ip = redis.call('INCR', KEYS[1])
@@ -287,7 +287,7 @@ if tonumber(res_ip) == 1 then redis.call('EXPIRE', KEYS[1], ARGV[3]) end
 
 ------
 
-# 🟢 最终返回
+## 🟢 最终返回
 
 ```lua
 return 1 -- 成功通过
@@ -301,7 +301,7 @@ return 1 -- 成功通过
 
 ------
 
-# 🟢 整体执行逻辑流程图
+## 🟢 整体执行逻辑流程图
 
 ```
 1️⃣ 记录 NAT 设备
@@ -322,7 +322,7 @@ return 1 -- 成功通过
 
 ------
 
-# 🟢 返回码总结
+## 🟢 返回码总结
 
 | 返回值 | 含义     |
 | ------ | -------- |
@@ -332,7 +332,7 @@ return 1 -- 成功通过
 
 ------
 
-# 🟢 这个脚本的设计优点
+## 🟢 这个脚本的设计优点
 
 ✅ 原子执行（Redis Lua）
 ✅ 设备优先级高
@@ -343,7 +343,7 @@ return 1 -- 成功通过
 
 ------
 
-# 🟢 这属于什么限流算法？
+## 🟢 这属于什么限流算法？
 
 这是：
 
