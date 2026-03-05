@@ -16,6 +16,11 @@
 
 
 ```Java
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface RiskCheck {
@@ -88,7 +93,26 @@ public class AuthController {
     }
 }
 ```
+#### 最后，拦截器，需要在 WebConfig.java 中配置，才会生效
 
+```Java
+@Configuration
+@RequiredArgsConstructor
+public class WebConfig implements WebMvcConfigurer {
+
+	// 由 Spring 注入
+    private final RiskInterceptor riskControllInterceptor;
+    
+    @Override
+    public void addInterceptors(@NonNull InterceptorRegistry registry) {
+        registry.addInterceptor(Objects.requireNonNull(riskControllInterceptor)) // 直接使用注入的实例
+                .addPathPatterns("/api/**").excludePathPatterns(
+                    "/api/*/auth/risk" // 排除获取 riskConfig 中生成Risk Token 的密钥接口
+                );
+    }
+}
+    
+```
 ------
 
 ### 2. 除了注册登录，还有哪些接口需要拦截？
