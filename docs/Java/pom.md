@@ -55,9 +55,7 @@
 
 在 `pom.xml` 中添加：
 
-XML
-
-```
+```xml
 <dependency>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-actuator</artifactId>
@@ -68,9 +66,7 @@ XML
 
 默认情况下，出于安全考虑，Spring Boot 只暴露了 `/health` 和 `/info`。如果你想查看所有信息，需要在 `application.yml` 中配置：
 
-YAML
-
-```
+```yaml
 management:
   endpoints:
     web:
