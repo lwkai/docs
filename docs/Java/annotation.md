@@ -2,7 +2,7 @@
 
 
 
-## Component 注解
+## Component
 
 在 Spring Boot 中，`@Component` 是 **IoC（控制反转）容器的入场券**。
 
@@ -72,3 +72,139 @@
 3. 拦截器在初始化时找 Spring 要这个东西，Spring 拿不出来，于是程序崩溃。
 
 **加上 `@Component` 之后，Spring 就会在启动时把这个工具类存进仓库，拦截器就能顺利“取货”了。**
+
+
+## Entity
+
+在 Spring Boot 结合 JPA（Java Persistence API）开发时，**`@Entity`** 是最核心的注解之一。它直接将你的 Java 类与数据库中的表建立起“映射关系”。
+
+简单来说：**`@Entity` 告诉 Spring 和 JPA，“这个类不仅是一个普通的 Java 对象，它还代表数据库里的一张表。”**
+
+------
+
+### 1. `@Entity` 的核心作用
+
+- **ORM 映射：** ORM 指的是“对象关系映射”（Object-Relational Mapping）。有了 `@Entity`，你操作 Java 对象（如 `user.setName("Gemini")`）时，JPA 就能自动将其转化为 SQL 语句（`UPDATE users SET name = 'Gemini' ...`）。
+- **自动建表（可选）：** 如果在配置文件中开启了 `ddl-auto: update`，JPA 会根据标注了 `@Entity` 的类，在数据库中自动创建对应的表结构。
+- **持久化管理：** 只有标注了 `@Entity` 的类，才能被 `JpaRepository` 或 `EntityManager` 识别并进行 CRUD（增删改查）操作。
+
+------
+
+### 2. 标准的 Entity 结构
+
+一个合格的实体类通常需要配合 `@Id`（主键）使用：
+
+Java
+
+```
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
+@Entity // 必须：标识为实体类
+@Table(name = "sys_user") // 可选：指定数据库表名，不加则默认类名即表名
+public class User {
+
+    @Id // 必须：标识主键
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // 主键自增
+    private Long id;
+
+    private String username;
+    private String email;
+}
+```
+
+------
+
+### 3. 使用 `@Entity` 的注意事项
+
+1. **必须有主键：** 每个 `@Entity` 类必须包含一个主键字段，并标注 `@Id`。
+2. **必须有无参构造函数：** JPA 在通过反射实例化对象时需要它（这就是为什么我们经常同时加上 Lombok 的 `@NoArgsConstructor`）。
+3. **不能是 final 类：** 为了实现延迟加载（Lazy Loading），JPA 框架需要创建实体的代理类，因此类和方法不能被 `final` 修饰。
+4. **字段映射：** 类中的所有属性默认都会映射为表中的同名字段。如果你不想某个字段存入数据库，需要加上 `@Transient` 注解。
+
+------
+
+### 4. 它与 `@Component` 的区别
+
+这是一个新手容易混淆的点：
+
+- **`@Component`**：把类交给 **Spring 容器**管理。它是一个“活的”服务对象，用来执行业务逻辑（比如你的 `JwtUtils`）。
+- **`@Entity`**：把类交给 **JPA 持久化上下文**管理。它是一个“死的数据模型”，用来承载数据库里的信息。
+
+> **注意：** 你永远**不应该**在同一个类上既加 `@Component` 又加 `@Entity`。
+
+------
+
+### 总结建议
+
+- 当你需要**操作数据库**存取数据时，用 `@Entity`。
+- 通常会配合 Lombok 的 `@Data`、`@AllArgsConstructor`、`@NoArgsConstructor` 一起使用，让代码最简化。
+
+**你现在是在配置数据库表结构吗？是否需要我帮你看看如何配置 `application.yml` 让 JPA 自动根据你的实体类生成数据库表？**
+
+## Getter
+
+来自 Lombok 库
+
+自动生成取值方法
+
+标注在类上或字段上，Lombok 会在编译时为字段生成 `public` 的 `get` 方法。
+
+- **作用：** 替代手动编写 `public String getName() { return name; }`。
+- **灵活性：** * **标注在类上：** 为所有非静态（non-static）字段生成 getter。
+  - **标注在字段上：** 只为该特定字段生成 getter。
+- **注意：** 它不会生成 `setter` 方法。如果你需要修改属性值，还需要配合 `@Setter` 或直接用 `@Data`。
+
+## AllArgsConstructor
+
+来自 Lombok 库
+
+全参构造函数
+
+标注在类上，Lombok 会生成一个包含**所有字段**作为参数的构造函数。
+
+- **作用：** 方便你一行代码完成对象的初始化。
+- **生成的代码逻辑：** 构造函数中参数的顺序与你在类中定义字段的顺序完全一致。
+
+### 为什么经常把它和`Getter`放在一起？
+
+当你定义一个 **DTO（数据传输对象）** 或 **Value Object（值对象）** 时，通常希望它是“只读”的。这时候 `@Getter` 和 `@AllArgsConstructor` 是绝配：
+
+```java
+@Getter
+@AllArgsConstructor
+public class UserResponse {
+    private final Long id;
+    private final String username;
+    private final String email;
+}
+
+// 使用时：
+UserResponse resp = new UserResponse(1L, "Gemini", "ai@google.com");
+System.out.println(resp.getUsername()); // 正常调用
+// resp.setUsername("..."); // 报错！因为没有 Setter，且字段是 final
+```
+
+### 与 @NoArgsConstructor 的冲突
+
+这是一个新手常踩的坑：
+
+1. Java 规定：如果你不写任何构造函数，编译器送你一个默认的“无参构造”。
+2. 一旦你加了 **`@AllArgsConstructor`**，默认的无参构造就**消失了**。
+3. **后果：** 如果你的类是 `@Entity`（数据库实体）或者需要 JSON 反序列化（Jackson），程序会报错，因为这些框架**必须**要求有一个无参构造函数。
+
+**解决方案：** 养成习惯，如果加了 `@AllArgsConstructor`，通常也要补上 `@NoArgsConstructor`。
+
+------
+
+### 总结对比
+
+| **注解**                  | **作用**     | **相当于手动写了...**                     |
+| ------------------------- | ------------ | ----------------------------------------- |
+| **`@Getter`**             | 生成读方法   | `public T getField() { ... }`             |
+| **`@AllArgsConstructor`** | 生成全员构造 | `public Class(field1, field2...) { ... }` |
+| **`@Data`**               | 综合礼包     | 包含 Getter, Setter, ToString, Equals...  |
+
