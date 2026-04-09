@@ -94,6 +94,9 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 # 如果以后需要 PDO 或其它，可以写在一起：
 #RUN docker-php-ext-install pdo pdo_mysql
+
+# 安装 redis 扩展
+RUN pecl install redis && docker-php-ext-enable redis
 ```
 
 `docker-compose.yml`文件内容如下
@@ -108,6 +111,8 @@ services:
       dockerfile: Dockerfile # 指定 Dockerfile 的名称(文件名)
     volumes:
       - ./src:/var/www/html
+    depends_on:
+      - redis    # 确保 redis 先启动
 
   # Web 服务器
   nginx: 
@@ -119,6 +124,36 @@ services:
       - ./conf.d:/etc/nginx/conf.d
     depends_on:
       - php
+      
+  redis:
+    image: redis:alpine # 使用轻量级的 alpine 版本
+    ports:
+      - "6381:6379" # 端口映射 把内部 6379 转到外部 6381
+    # 如果需要数据持久化，可以取消下面两行的注释
+    # volumes:
+    #   - ./redis-data:/data
+    
+  mysql:
+    image: mysql:8.0
+    container_name: mysql  # 指定容器名称
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf:/etc/mysql/conf.d
+      
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - "8071:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
 ```
 
 然后在PowerShell 中，进入到项目目录下，执行命令
