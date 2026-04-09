@@ -433,6 +433,9 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 # \u5982\u679C\u4EE5\u540E\u9700\u8981 PDO \u6216\u5176\u5B83\uFF0C\u53EF\u4EE5\u5199\u5728\u4E00\u8D77\uFF1A
 #RUN docker-php-ext-install pdo pdo_mysql
+
+# \u5B89\u88C5 redis \u6269\u5C55
+RUN pecl install redis && docker-php-ext-enable redis
 `,paraId:15,tocIndex:2},{value:"docker-compose.yml",paraId:16,tocIndex:2},{value:"\u6587\u4EF6\u5185\u5BB9\u5982\u4E0B",paraId:16,tocIndex:2},{value:`services:
   # PHP \u670D\u52A1
   php:
@@ -442,6 +445,8 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
       dockerfile: Dockerfile # \u6307\u5B9A Dockerfile \u7684\u540D\u79F0(\u6587\u4EF6\u540D)
     volumes:
       - ./src:/var/www/html
+    depends_on:
+      - redis    # \u786E\u4FDD redis \u5148\u542F\u52A8
 
   # Web \u670D\u52A1\u5668
   nginx: 
@@ -453,5 +458,35 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
       - ./conf.d:/etc/nginx/conf.d
     depends_on:
       - php
+      
+  redis:
+    image: redis:alpine # \u4F7F\u7528\u8F7B\u91CF\u7EA7\u7684 alpine \u7248\u672C
+    ports:
+      - "6381:6379" # \u7AEF\u53E3\u6620\u5C04 \u628A\u5185\u90E8 6379 \u8F6C\u5230\u5916\u90E8 6381
+    # \u5982\u679C\u9700\u8981\u6570\u636E\u6301\u4E45\u5316\uFF0C\u53EF\u4EE5\u53D6\u6D88\u4E0B\u9762\u4E24\u884C\u7684\u6CE8\u91CA
+    # volumes:
+    #   - ./redis-data:/data
+    
+  mysql:
+    image: mysql:8.0
+    container_name: mysql  # \u6307\u5B9A\u5BB9\u5668\u540D\u79F0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    ports:
+      - "3308:3306"
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/conf:/etc/mysql/conf.d
+      
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - "8071:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
 `,paraId:17,tocIndex:2},{value:"\u7136\u540E\u5728PowerShell \u4E2D\uFF0C\u8FDB\u5165\u5230\u9879\u76EE\u76EE\u5F55\u4E0B\uFF0C\u6267\u884C\u547D\u4EE4",paraId:18,tocIndex:2},{value:`docker-compose up -d --build
 `,paraId:19,tocIndex:2}]},24842:function(I,e,a){a.r(e),a.d(e,{texts:function(){return d}});const d=[{value:"This is a guide example.",paraId:0}]},9177:function(I,e,a){a.r(e),a.d(e,{texts:function(){return d}});const d=[]}}]);
