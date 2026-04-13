@@ -428,6 +428,20 @@ docker-compose up -d
 docker-compose restart php
 `,paraId:12,tocIndex:1},{value:"\u521B\u5EFA ",paraId:13,tocIndex:2},{value:"docker-compose.yml",paraId:13,tocIndex:2},{value:"\uFF0C\u5728\u914D\u7F6E\u6587\u4EF6\u4E2D\uFF0C\u5F15\u5165 ",paraId:13,tocIndex:2},{value:"Dockerfile",paraId:13,tocIndex:2},{value:" \u6587\u4EF6\uFF0C\u8FD9\u4E2A\u6587\u4EF6\u4E2D\u914D\u7F6E\u6574\u4E2APHP\u9700\u8981\u7528\u5230\u7684\u76F8\u5E94\u6269\u5C55\u7B49",paraId:13,tocIndex:2},{value:"Dockerfile",paraId:14,tocIndex:2},{value:"\u6587\u4EF6\u5185\u5BB9\u5982\u4E0B\uFF1A",paraId:14,tocIndex:2},{value:`FROM php:7.4-fpm
 
+# 1. \u5B89\u88C5 GD \u5E93\u6240\u9700\u7684\u7CFB\u7EDF\u4F9D\u8D56
+RUN apt-get update && apt-get install -y \\
+        libfreetype6-dev \\
+        libjpeg62-turbo-dev \\
+        libpng-dev \\
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \\
+    && docker-php-ext-install -j$(nproc) gd
+
+# \u66F4\u65B0 PECL \u9891\u9053\uFF08\u89E3\u51B3\u7B2C\u4E00\u4E2A WARNING\uFF09
+RUN pecl channel-update pecl.php.net
+
+# \u5B89\u88C5\u6307\u5B9A\u7248\u672C\u7684 xdebug (3.1.6 \u662F PHP 7.4 \u7684\u7EC8\u70B9\u7248\u672C)
+# RUN pecl install xdebug-3.1.6 && docker-php-ext-enable xdebug
+
 # \u5B89\u88C5 mysqli \u6269\u5C55
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
