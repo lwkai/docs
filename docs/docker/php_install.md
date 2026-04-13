@@ -89,6 +89,20 @@ docker-compose up -d
 ```dockerfile
 FROM php:7.4-fpm
 
+# 1. 安装 GD 库所需的系统依赖
+RUN apt-get update && apt-get install -y \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libpng-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd
+
+# 更新 PECL 频道（解决第一个 WARNING）
+RUN pecl channel-update pecl.php.net
+
+# 安装指定版本的 xdebug (3.1.6 是 PHP 7.4 的终点版本)
+# RUN pecl install xdebug-3.1.6 && docker-php-ext-enable xdebug
+
 # 安装 mysqli 扩展
 RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
