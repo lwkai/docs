@@ -4,8 +4,8 @@ hero:
   title: 学习笔记
   description: 学习笔记记录
   actions:
-    - text: Hello
-      link: /
+    - text: Java
+      link: /java
     - text: World
       link: /
 # features:
