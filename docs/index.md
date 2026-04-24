@@ -3,11 +3,11 @@ title: A static site based on dumi
 hero:
   title: 学习笔记
   description: 学习笔记记录
-  # actions:
-  #   - text: Hello
-  #     link: /
-  #   - text: World
-  #     link: /
+  actions:
+    - text: Hello
+      link: /
+    - text: World
+      link: /
 # features:
 #   - title: Hello
 #     emoji: 💎
