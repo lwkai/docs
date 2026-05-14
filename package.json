@@ -30,5 +30,15 @@
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "@swc/core",
+      "core-js-pure",
+      "core-js",
+      "esbuild",
+      "less"
+    ]
   }
 }
