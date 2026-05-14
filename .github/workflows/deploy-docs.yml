@@ -29,6 +29,8 @@ jobs:
                   cache: pnpm
 
             - name: 安装依赖
+              env:
+                PNPM_ALLOW_ONLY_BUILT_DEPENDENCIES: "true"
               run: |
                   corepack enable
                   pnpm install --frozen-lockfile
