@@ -203,3 +203,13 @@ class InterconnectInvitationViewSet(viewsets.ModelViewSet):
 1. **别动主表 ID**：处理互联企业数据冲突时，用映射表/虚拟映射作为中间层，序列化器可以通过外键动态包装组合。
 2. **控制权收拢在后端**：状态的 `Id-Name` 映射、URL 签名计算必须由序列化器输出，前端只负责渲染，不负责逻辑硬编码。
 3. **建立全局性能视角**：写代码时时刻警惕 `SerializerMethodField` 里的查询和计算。遇到高频 list 接口，果断采用**方案一（拆分序列化器并重写 `get_serializer_class`）**，这是最标准、最利于中大型项目解耦的工程审美。
+
+## 常规的序列化器使用
+```python
+class CorpConnectionViewSet(CustomModelViewSet):
+    queryset = CorpConnection.objects.all()
+
+    permission_classes = [IsAuthenticated, IsCompanyUser]
+
+    serializer_class = DataAggregateSerializer  # 要用到的序列化器
+```
