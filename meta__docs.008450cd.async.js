@@ -1,4 +1,4 @@
-"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[904],{94648:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},98395:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},18874:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},28726:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},40323:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},16020:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},98199:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},84327:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},87948:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},96006:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},18009:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},75065:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},61582:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},69472:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},78615:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},27245:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},31293:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},48508:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},56116:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},66107:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},89431:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},19225:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},9806:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},32090:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},76863:function(I,e,a){a.r(e),a.d(e,{texts:function(){return d}});const d=[{value:"\u81EA\u5B9A\u4E49\u6CE8\u89E3 + \u62E6\u622A\u5668 \u5B9E\u73B0 \u767B\u5F55/\u6CE8\u518C \u7B49\u5173\u952E\u4F4D\u7F6E\u7684\u5B89\u5168\u4EE4\u724C\u529F\u80FD\uFF0C",paraId:0,tocIndex:0},{value:"\u4E1A\u52A1\u98CE\u63A7 / \u9632\u722C\u9632\u649E\u5E93\uFF08\u4EBA\u673A\u6311\u6218 / \u4EBA\u673A\u6821\u9A8C / \u5B89\u5168\u4EE4\u724C / \u6311\u6218\u54CD\u5E94\u673A\u5236 / \u8BBE\u5907\u6307\u7EB9 \uFF09",paraId:1,tocIndex:0},{value:"\u8981\u5B9E\u73B0\u53EA\u62E6\u622A\u6307\u5B9A\u63A5\u53E3\uFF08\u5982\u6CE8\u518C\u3001\u767B\u5F55\uFF09\uFF0C\u6700\u4F18\u96C5\u4E14\u7B26\u5408 Spring Boot \u4E60\u60EF\u7684\u505A\u6CD5\u662F\u4F7F\u7528 ",paraId:2,tocIndex:0},{value:"\u81EA\u5B9A\u4E49\u6CE8\u89E3 + \u62E6\u622A\u5668",paraId:2,tocIndex:0},{value:"\u3002",paraId:2,tocIndex:0},{value:"\u8FD9\u6837\u4F60\u5C31\u4E0D\u9700\u8981\u5728\u62E6\u622A\u5668\u7684\u914D\u7F6E\u7C7B\u91CC\u5199\u6B7B\u4E00\u957F\u4E32\u7684 URL \u8DEF\u5F84\uFF0C\u800C\u662F\u76F4\u63A5\u5728 Controller \u7684\u65B9\u6CD5\u4E0A\u201C\u70B9\u77F3\u6210\u91D1\u201D\u3002",paraId:3,tocIndex:0},{value:"@RiskCheck",paraId:4},{value:"\u521B\u5EFA\u4E00\u4E2A\u8FD0\u884C\u65F6\u6CE8\u89E3\uFF0C\u7528\u6765\u6807\u8BB0\u9700\u8981\u8FDB\u884C RiskToken \u6821\u9A8C\u7684\u65B9\u6CD5\u3002",paraId:5,tocIndex:2},{value:`import java.lang.annotation.ElementType;
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[904],{94648:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},98395:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},18874:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},28726:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},40323:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},16020:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},98199:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},84327:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},87948:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},61611:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},96006:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},18009:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},75065:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},61582:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},69472:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},78615:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},27245:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},31293:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},48508:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},56116:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},66107:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},89431:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},19225:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},9806:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},32090:function(I,e,a){a.r(e),a.d(e,{demos:function(){return n}});var d=a(75271),n={}},76863:function(I,e,a){a.r(e),a.d(e,{texts:function(){return d}});const d=[{value:"\u81EA\u5B9A\u4E49\u6CE8\u89E3 + \u62E6\u622A\u5668 \u5B9E\u73B0 \u767B\u5F55/\u6CE8\u518C \u7B49\u5173\u952E\u4F4D\u7F6E\u7684\u5B89\u5168\u4EE4\u724C\u529F\u80FD\uFF0C",paraId:0,tocIndex:0},{value:"\u4E1A\u52A1\u98CE\u63A7 / \u9632\u722C\u9632\u649E\u5E93\uFF08\u4EBA\u673A\u6311\u6218 / \u4EBA\u673A\u6821\u9A8C / \u5B89\u5168\u4EE4\u724C / \u6311\u6218\u54CD\u5E94\u673A\u5236 / \u8BBE\u5907\u6307\u7EB9 \uFF09",paraId:1,tocIndex:0},{value:"\u8981\u5B9E\u73B0\u53EA\u62E6\u622A\u6307\u5B9A\u63A5\u53E3\uFF08\u5982\u6CE8\u518C\u3001\u767B\u5F55\uFF09\uFF0C\u6700\u4F18\u96C5\u4E14\u7B26\u5408 Spring Boot \u4E60\u60EF\u7684\u505A\u6CD5\u662F\u4F7F\u7528 ",paraId:2,tocIndex:0},{value:"\u81EA\u5B9A\u4E49\u6CE8\u89E3 + \u62E6\u622A\u5668",paraId:2,tocIndex:0},{value:"\u3002",paraId:2,tocIndex:0},{value:"\u8FD9\u6837\u4F60\u5C31\u4E0D\u9700\u8981\u5728\u62E6\u622A\u5668\u7684\u914D\u7F6E\u7C7B\u91CC\u5199\u6B7B\u4E00\u957F\u4E32\u7684 URL \u8DEF\u5F84\uFF0C\u800C\u662F\u76F4\u63A5\u5728 Controller \u7684\u65B9\u6CD5\u4E0A\u201C\u70B9\u77F3\u6210\u91D1\u201D\u3002",paraId:3,tocIndex:0},{value:"@RiskCheck",paraId:4},{value:"\u521B\u5EFA\u4E00\u4E2A\u8FD0\u884C\u65F6\u6CE8\u89E3\uFF0C\u7528\u6765\u6807\u8BB0\u9700\u8981\u8FDB\u884C RiskToken \u6821\u9A8C\u7684\u65B9\u6CD5\u3002",paraId:5,tocIndex:2},{value:`import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
@@ -236,7 +236,187 @@ elif env == 'feishu':  # \u98DE\u4E66
 else:  # \u9ED8\u8BA4\u7528\u5F00\u53D1\u73AF\u5883
     from .dev import *
 
-`,paraId:6,tocIndex:1}]},65304:function(I,e,a){a.r(e),a.d(e,{texts:function(){return d}});const d=[{value:"\u672C\u6587\u9002\u5408\uFF1A",paraId:0,tocIndex:0},{value:"Django \u65B0\u624B",paraId:1,tocIndex:0},{value:"Python \u540E\u7AEF\u65B0\u624B",paraId:1,tocIndex:0},{value:"\u7B2C\u4E00\u6B21\u4F7F\u7528 Celery",paraId:1,tocIndex:0},{value:"\u7B2C\u4E00\u6B21\u505A\u5B9A\u65F6\u4EFB\u52A1",paraId:1,tocIndex:0},{value:"\u7B2C\u4E00\u6B21\u505A Redis \u5728\u7EBF\u72B6\u6001",paraId:1,tocIndex:0},{value:"\u76EE\u6807\uFF1A",paraId:2,tocIndex:0},{value:"\u4ECE\u96F6\u5F7B\u5E95\u7406\u89E3\uFF1A",paraId:3,tocIndex:0},{value:"Celery \u662F\u4EC0\u4E48",paraId:4,tocIndex:0},{value:"Beat \u662F\u4EC0\u4E48",paraId:4,tocIndex:0},{value:"Worker \u662F\u4EC0\u4E48",paraId:4,tocIndex:0},{value:"Redis \u5728\u91CC\u9762\u5E72\u4EC0\u4E48",paraId:4,tocIndex:0},{value:"Django \u5982\u4F55\u914D\u7F6E\u5B9A\u65F6\u4EFB\u52A1",paraId:4,tocIndex:0},{value:"\u5982\u4F55\u505A\u5728\u7EBF\u7528\u6237\u6E05\u7406",paraId:4,tocIndex:0},{value:"\u5B9A\u65F6\u4EFB\u52A1\uFF1A",paraId:5,tocIndex:1},{value:"\u5C31\u662F\uFF1A",paraId:6,tocIndex:1},{value:"\u5230\u67D0\u4E2A\u65F6\u95F4\u81EA\u52A8\u6267\u884C\u4EE3\u7801\u3002",paraId:7,tocIndex:1},{value:"\u4F8B\u5982\uFF1A",paraId:8,tocIndex:1},{value:"\u573A\u666F",paraId:9,tocIndex:1},{value:"\u793A\u4F8B",paraId:9,tocIndex:1},{value:"\u5728\u7EBF\u72B6\u6001\u6E05\u7406",paraId:9,tocIndex:1},{value:"\u6BCF\u5206\u949F\u6E05\u7406\u79BB\u7EBF\u7528\u6237",paraId:9,tocIndex:1},{value:"\u8BA2\u5355\u8D85\u65F6",paraId:9,tocIndex:1},{value:"30\u5206\u949F\u672A\u652F\u4ED8\u81EA\u52A8\u53D6\u6D88",paraId:9,tocIndex:1},{value:"\u7F13\u5B58\u5237\u65B0",paraId:9,tocIndex:1},{value:"\u6BCF10\u5206\u949F\u5237\u65B0\u7F13\u5B58",paraId:9,tocIndex:1},{value:"\u6570\u636E\u7EDF\u8BA1",paraId:9,tocIndex:1},{value:"\u6BCF\u5929\u51CC\u6668\u7EDF\u8BA1\u62A5\u8868",paraId:9,tocIndex:1},{value:"\u90AE\u4EF6\u53D1\u9001",paraId:9,tocIndex:1},{value:"\u6BCF\u59299\u70B9\u53D1\u9001\u90AE\u4EF6",paraId:9,tocIndex:1},{value:"Django\uFF1A",paraId:10,tocIndex:2},{value:"\u672C\u8EAB\u662F\uFF1A",paraId:11,tocIndex:2},{value:`Web\u6846\u67B6
+`,paraId:6,tocIndex:1}]},88778:function(I,e,a){a.r(e),a.d(e,{texts:function(){return d}});const d=[{value:"\u672C\u6587\u9002\u5408\uFF1A",paraId:0,tocIndex:0},{value:"Django \u65B0\u624B",paraId:1,tocIndex:0},{value:"DRF \u65B0\u624B",paraId:1,tocIndex:0},{value:"\u4ECE Java/Spring \u8F6C Python \u7684\u5F00\u53D1\u8005",paraId:1,tocIndex:0},{value:"\u60F3\u7406\u89E3 APIView \u548C ViewSet \u533A\u522B\u7684\u4EBA",paraId:1,tocIndex:0},{value:"\u76EE\u6807\uFF1A",paraId:2,tocIndex:0},{value:"\u5F7B\u5E95\u7406\u89E3\uFF1A",paraId:3,tocIndex:0},{value:"APIView \u662F\u4EC0\u4E48",paraId:4,tocIndex:0},{value:"ViewSet \u662F\u4EC0\u4E48",paraId:4,tocIndex:0},{value:"Serializer \u662F\u4EC0\u4E48",paraId:4,tocIndex:0},{value:"JWT \u5728\u54EA\u91CC\u5DE5\u4F5C",paraId:4,tocIndex:0},{value:"\u4E3A\u4EC0\u4E48\u5927\u5382\u5F88\u591A\u559C\u6B22 APIView",paraId:4,tocIndex:0},{value:"\u5982\u4F55\u6B63\u786E\u7EC4\u7EC7\u9879\u76EE\u7ED3\u6784",paraId:4,tocIndex:0},{value:"Django REST framework",paraId:5,tocIndex:1},{value:"DRF\uFF1A",paraId:6,tocIndex:1},{value:"\u5168\u79F0\uFF1A",paraId:7,tocIndex:1},{value:`Django REST Framework
+`,paraId:8,tocIndex:1},{value:"\u5B83\u662F\uFF1A",paraId:9,tocIndex:1},{value:"Django \u6700\u6D41\u884C\u7684 REST API \u6846\u67B6\u3002",paraId:10,tocIndex:1},{value:"\u4F5C\u7528\uFF1A",paraId:11,tocIndex:1},{value:"\u5F00\u53D1\u63A5\u53E3",paraId:12,tocIndex:1},{value:"JSON \u8FD4\u56DE",paraId:12,tocIndex:1},{value:"\u7528\u6237\u8BA4\u8BC1",paraId:12,tocIndex:1},{value:"JWT",paraId:12,tocIndex:1},{value:"\u53C2\u6570\u6821\u9A8C",paraId:12,tocIndex:1},{value:"\u5206\u9875",paraId:12,tocIndex:1},{value:"\u6743\u9650\u63A7\u5236",paraId:12,tocIndex:1},{value:"DRF\uFF1A",paraId:13,tocIndex:2},{value:"\u6700\u5E38\u7528\uFF1A",paraId:14,tocIndex:2},{value:"\u7C7B\u578B",paraId:15,tocIndex:2},{value:"\u4F5C\u7528",paraId:15,tocIndex:2},{value:"APIView",paraId:15,tocIndex:2},{value:"\u81EA\u5B9A\u4E49\u4E1A\u52A1\u63A5\u53E3",paraId:15,tocIndex:2},{value:"ViewSet",paraId:15,tocIndex:2},{value:"\u6807\u51C6 CRUD",paraId:15,tocIndex:2},{value:"\u5F88\u591A\u65B0\u624B\uFF1A",paraId:16,tocIndex:2},{value:"\u4E00\u5F00\u59CB\uFF1A",paraId:17,tocIndex:2},{value:`\u4E0D\u77E5\u9053\u8BE5\u9009\u54EA\u4E2A
+`,paraId:18,tocIndex:2},{value:"\u8FD9\u662F\u975E\u5E38\u6B63\u5E38\u7684\u3002",paraId:19,tocIndex:2},{value:"ViewSet\uFF1A",paraId:20,tocIndex:4},{value:"\u672C\u8D28\uFF1A",paraId:21,tocIndex:4},{value:`\u81EA\u52A8 CRUD \u751F\u6210\u5668
+`,paraId:22,tocIndex:4},{value:"\u5B83\uFF1A",paraId:23,tocIndex:4},{value:"\u5E2E\u4F60\u81EA\u52A8\u751F\u6210\uFF1A",paraId:24,tocIndex:4},{value:"\u589E\u5220\u6539\u67E5",paraId:25,tocIndex:4},{value:"list",paraId:25,tocIndex:4},{value:"create",paraId:25,tocIndex:4},{value:"update",paraId:25,tocIndex:4},{value:"delete",paraId:25,tocIndex:4},{value:`class User(models.Model):
+
+    username = models.CharField(max_length=20)
+`,paraId:26,tocIndex:6},{value:`from rest_framework import serializers
+
+class UserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+
+        fields = '__all__'
+`,paraId:27,tocIndex:7},{value:`from rest_framework.viewsets import ModelViewSet
+
+class UserViewSet(ModelViewSet):
+
+    queryset = User.objects.all()
+
+    serializer_class = UserSerializer
+`,paraId:28,tocIndex:8},{value:`from rest_framework.routers import DefaultRouter
+
+router = DefaultRouter()
+
+router.register(r'users', UserViewSet)
+
+urlpatterns = router.urls
+`,paraId:29,tocIndex:9},{value:"DRF\uFF1A",paraId:30,tocIndex:10},{value:"\u81EA\u52A8\u5E2E\u4F60\u751F\u6210\uFF1A",paraId:31,tocIndex:10},{value:"\u65B9\u6CD5",paraId:32,tocIndex:10},{value:"URL",paraId:32,tocIndex:10},{value:"\u529F\u80FD",paraId:32,tocIndex:10},{value:"GET",paraId:32,tocIndex:10},{value:"/users/",paraId:32,tocIndex:10},{value:"\u5217\u8868",paraId:32,tocIndex:10},{value:"POST",paraId:32,tocIndex:10},{value:"/users/",paraId:32,tocIndex:10},{value:"\u521B\u5EFA",paraId:32,tocIndex:10},{value:"GET",paraId:32,tocIndex:10},{value:"/users/1/",paraId:32,tocIndex:10},{value:"\u8BE6\u60C5",paraId:32,tocIndex:10},{value:"PUT",paraId:32,tocIndex:10},{value:"/users/1/",paraId:32,tocIndex:10},{value:"\u4FEE\u6539",paraId:32,tocIndex:10},{value:"DELETE",paraId:32,tocIndex:10},{value:"/users/1/",paraId:32,tocIndex:10},{value:"\u5220\u9664",paraId:32,tocIndex:10},{value:"\u4F60\u53EA\u5199\uFF1A",paraId:33,tocIndex:12},{value:`queryset
+serializer_class
+`,paraId:34,tocIndex:12},{value:"\u5373\u53EF\u3002",paraId:35,tocIndex:12},{value:"\u9002\u5408\uFF1A",paraId:36,tocIndex:13},{value:"\u540E\u53F0\u7BA1\u7406",paraId:37,tocIndex:13},{value:"\u5546\u54C1",paraId:37,tocIndex:13},{value:"\u7528\u6237",paraId:37,tocIndex:13},{value:"\u5206\u7C7B",paraId:37,tocIndex:13},{value:"\u6807\u7B7E",paraId:37,tocIndex:13},{value:"URL\uFF1A",paraId:38,tocIndex:14},{value:"\u81EA\u52A8\u89C4\u8303\u5316\u3002",paraId:39,tocIndex:14},{value:"\u590D\u6742\u4E1A\u52A1\uFF1A",paraId:40,tocIndex:15},{value:"\u5BB9\u6613\uFF1A",paraId:41,tocIndex:15},{value:`@action
+@action
+@action
+`,paraId:42,tocIndex:15},{value:"\u6700\u540E\uFF1A",paraId:43,tocIndex:15},{value:`\u4E00\u4E2A ViewSet \u51E0\u5343\u884C
+`,paraId:44,tocIndex:15},{value:"\u975E\u5E38\u96BE\u7EF4\u62A4\u3002",paraId:45,tocIndex:15},{value:"\u4F8B\u5982\uFF1A",paraId:46,tocIndex:16},{value:"\u4F60\u60F3\uFF1A",paraId:47,tocIndex:16},{value:`/users/login/
+/users/logout/
+/users/heartbeat/
+`,paraId:48,tocIndex:16},{value:"\u8FD9\u4E9B\uFF1A",paraId:49,tocIndex:16},{value:"\u4E0D\u662F\uFF1A",paraId:50,tocIndex:16},{value:`\u6807\u51C6 CRUD
+`,paraId:51,tocIndex:16},{value:"\u4E8E\u662F\uFF1A",paraId:52,tocIndex:16},{value:"DRF \u63D0\u4F9B\uFF1A",paraId:53,tocIndex:16},{value:`@action
+`,paraId:54,tocIndex:16},{value:`from rest_framework.decorators import action
+
+class UserViewSet(ModelViewSet):
+
+    @action(detail=False, methods=['post'])
+    def heartbeat(self, request):
+
+        return Response({
+            "msg": "heartbeat"
+        })
+`,paraId:55,tocIndex:17},{value:`/users/heartbeat/
+`,paraId:56,tocIndex:18},{value:"\u5982\u679C\uFF1A",paraId:57,tocIndex:19},{value:`@action
+@action
+@action
+`,paraId:58,tocIndex:19},{value:"\u8D8A\u6765\u8D8A\u591A\u3002",paraId:59,tocIndex:19},{value:"\u6700\u540E\uFF1A",paraId:60,tocIndex:19},{value:`ViewSet \u4F1A\u7279\u522B\u4E71
+`,paraId:61,tocIndex:19},{value:"APIView\uFF1A",paraId:62,tocIndex:21},{value:"\u672C\u8D28\uFF1A",paraId:63,tocIndex:21},{value:`\u4E00\u4E2A URL \u5BF9\u5E94\u4E00\u4E2A View
+`,paraId:64,tocIndex:21},{value:"\u66F4\u63A5\u8FD1\uFF1A",paraId:65,tocIndex:21},{value:`\u539F\u751F Django View
+`,paraId:66,tocIndex:21},{value:`from rest_framework.views import APIView
+from rest_framework.response import Response
+
+class UserHeartbeatView(APIView):
+
+    def post(self, request):
+
+        return Response({
+            "msg": "heartbeat"
+        })
+`,paraId:67,tocIndex:23},{value:`from django.urls import path
+
+urlpatterns = [
+
+    path(
+        'users/heartbeat/',
+        UserHeartbeatView.as_view()
+    ),
+]
+`,paraId:68,tocIndex:24},{value:"APIView\uFF1A",paraId:69,tocIndex:25},{value:"\u4E0D\u662F\uFF1A",paraId:70,tocIndex:25},{value:`Router \u81EA\u52A8\u751F\u6210
+`,paraId:71,tocIndex:25},{value:"\u800C\u662F\uFF1A",paraId:72,tocIndex:25},{value:"\u4F60\u81EA\u5DF1\u5199 path\u3002",paraId:73,tocIndex:25},{value:"\u6839\u636E\uFF1A",paraId:74,tocIndex:26},{value:`HTTP Method
+`,paraId:75,tocIndex:26},{value:`def get()
+`,paraId:76,tocIndex:27},{value:`def post()
+`,paraId:77,tocIndex:28},{value:`def put()
+`,paraId:78,tocIndex:29},{value:`def delete()
+`,paraId:79,tocIndex:30},{value:"\u4F8B\u5982\uFF1A",paraId:80,tocIndex:32},{value:`heartbeat.py
+login.py
+logout.py
+`,paraId:81,tocIndex:32},{value:"\u804C\u8D23\u660E\u786E\u3002",paraId:82,tocIndex:32},{value:"\u4F8B\u5982\uFF1A",paraId:83,tocIndex:33},{value:"\u767B\u5F55",paraId:84,tocIndex:33},{value:"IM",paraId:84,tocIndex:33},{value:"WebSocket",paraId:84,tocIndex:33},{value:"\u652F\u4ED8",paraId:84,tocIndex:33},{value:"AI",paraId:84,tocIndex:33},{value:"\u6587\u4EF6\u4E0A\u4F20",paraId:84,tocIndex:33},{value:"\u5728\u7EBF\u72B6\u6001",paraId:84,tocIndex:33},{value:"\u5927\u578B\u9879\u76EE\uFF1A",paraId:85,tocIndex:34},{value:"\u901A\u5E38\uFF1A",paraId:86,tocIndex:34},{value:`\u4E00\u4E2A\u63A5\u53E3\u4E00\u4E2A View
+`,paraId:87,tocIndex:34},{value:"\u56E0\u4E3A\uFF1A",paraId:88,tocIndex:36},{value:"\u5F88\u591A\u4E1C\u897F\uFF1A",paraId:89,tocIndex:36},{value:"\u4F60\u81EA\u5DF1\u5199\u3002",paraId:90,tocIndex:36},{value:"\u5F88\u591A\u65B0\u624B\u8BEF\u89E3\uFF1A",paraId:91,tocIndex:37},{value:`Serializer \u53EA\u662F\u6570\u636E\u5E93\u5E8F\u5217\u5316
+`,paraId:92,tocIndex:37},{value:"\u5176\u5B9E\uFF1A",paraId:93,tocIndex:37},{value:"\u4E0D\u662F\u3002",paraId:94,tocIndex:37},{value:"\u4F8B\u5982\uFF1A",paraId:95,tocIndex:39},{value:`username \u5FC5\u586B
+password \u957F\u5EA6
+\u90AE\u7BB1\u683C\u5F0F
+`,paraId:96,tocIndex:39},{value:"\u9632\u6B62\uFF1A",paraId:97,tocIndex:41},{value:`\u5BA2\u6237\u7AEF\u4E71\u4F20\u5B57\u6BB5
+`,paraId:98,tocIndex:41},{value:"\u7B54\u6848\uFF1A",paraId:99,tocIndex:42},{value:"\u53EA\u662F\uFF1A",paraId:100,tocIndex:43},{value:"APIView\uFF1A",paraId:101,tocIndex:43},{value:"\u4E0D\u4F1A\uFF1A",paraId:102,tocIndex:43},{value:`\u81EA\u52A8\u8C03\u7528
+`,paraId:103,tocIndex:43},{value:"\u9700\u8981\uFF1A",paraId:104,tocIndex:43},{value:"\u4F60\u81EA\u5DF1\u8C03\u7528\u3002",paraId:105,tocIndex:43},{value:`from rest_framework import serializers
+
+class LoginSerializer(serializers.Serializer):
+
+    username = serializers.CharField()
+
+    password = serializers.CharField()
+`,paraId:106,tocIndex:45},{value:`class LoginView(APIView):
+
+    def post(self, request):
+
+        serializer = LoginSerializer(
+            data=request.data
+        )
+
+        serializer.is_valid(
+            raise_exception=True
+        )
+
+        return Response(
+            serializer.validated_data
+        )
+`,paraId:107,tocIndex:46},{value:"\u56E0\u4E3A\uFF1A",paraId:108,tocIndex:47},{value:"DRF\uFF1A",paraId:109,tocIndex:47},{value:"\u5DF2\u7ECF\u5E2E\u4F60\uFF1A",paraId:110,tocIndex:47},{value:"\u81EA\u52A8\uFF1A",paraId:111,tocIndex:47},{value:`serializer.is_valid()
+
+serializer.save()
+`,paraId:112,tocIndex:47},{value:"\u4E86\u3002",paraId:113,tocIndex:47},{value:"\u5F88\u591A\u4EBA\u8BEF\u4EE5\u4E3A\uFF1A",paraId:114,tocIndex:48},{value:`JWT \u5C5E\u4E8E ViewSet
+`,paraId:115,tocIndex:48},{value:"\u5176\u5B9E\uFF1A",paraId:116,tocIndex:48},{value:"\u4E0D\u662F\u3002",paraId:117,tocIndex:48},{value:"JWT\uFF1A",paraId:118,tocIndex:48},{value:"\u5C5E\u4E8E\uFF1A",paraId:119,tocIndex:48},{value:`Authentication \u5C42
+`,paraId:120,tocIndex:48},{value:"\u6240\u4EE5\uFF1A",paraId:121,tocIndex:49},{value:`request.user
+`,paraId:122,tocIndex:50},{value:"\u80FD\u83B7\u53D6\u7528\u6237\u3002",paraId:123,tocIndex:50},{value:`request.user
+`,paraId:124,tocIndex:51},{value:"\u4E5F\u4E00\u6837\u3002",paraId:125,tocIndex:51},{value:"settings.py\uFF1A",paraId:126,tocIndex:52},{value:`REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+
+    ),
+}
+`,paraId:127,tocIndex:52},{value:`from rest_framework.permissions import IsAuthenticated
+
+class HeartbeatView(APIView):
+
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+
+        print(request.user)
+
+        return Response()
+`,paraId:128,tocIndex:53},{value:`class UserViewSet(ModelViewSet):
+
+    permission_classes = [IsAuthenticated]
+`,paraId:129,tocIndex:54},{value:"\u5B8C\u5168\u4E00\u6837\u3002",paraId:130,tocIndex:54},{value:"\u5927\u578B\u9879\u76EE\uFF1A",paraId:131,tocIndex:55},{value:"\u63A8\u8350\uFF1A",paraId:132,tocIndex:55},{value:`\u53C2\u6570\u6821\u9A8C
+`,paraId:133,tocIndex:56},{value:`\u4E1A\u52A1\u903B\u8F91
+`,paraId:134,tocIndex:57},{value:`HTTP\u5165\u53E3
+`,paraId:135,tocIndex:58},{value:"\u9519\u8BEF\u793A\u4F8B\uFF1A",paraId:136,tocIndex:59},{value:`class LoginView(APIView):
+
+    def post(self, request):
+
+        \u51E0\u767E\u884C\u4E1A\u52A1\u4EE3\u7801
+`,paraId:137,tocIndex:59},{value:"\u540E\u671F\uFF1A",paraId:138,tocIndex:59},{value:"\u7279\u522B\u96BE\u7EF4\u62A4\u3002",paraId:139,tocIndex:59},{value:`class LoginSerializer(...)
+`,paraId:140,tocIndex:61},{value:`class LoginService:
+
+    @staticmethod
+    def login(...):
+`,paraId:141,tocIndex:62},{value:`class LoginView(APIView):
+
+    def post(self, request):
+
+        serializer = ...
+
+        LoginService.login(...)
+`,paraId:142,tocIndex:63},{value:"\u56E0\u4E3A\uFF1A",paraId:143,tocIndex:64},{value:"\u590D\u6742\u4E1A\u52A1\uFF1A",paraId:144,tocIndex:64},{value:"ViewSet\uFF1A",paraId:145,tocIndex:64},{value:"\u540E\u671F\uFF1A",paraId:146,tocIndex:64},{value:`\u5BB9\u6613\u53D8\u8D85\u7EA7\u5927\u6587\u4EF6
+`,paraId:147,tocIndex:64},{value:"\u800C APIView\uFF1A",paraId:148,tocIndex:64},{value:`\u804C\u8D23\u6E05\u6670
+`,paraId:149,tocIndex:64},{value:"\u66F4\u9002\u5408\u591A\u4EBA\u534F\u4F5C\u3002",paraId:150,tocIndex:64},{value:"\u9002\u5408\uFF1A",paraId:151,tocIndex:65},{value:`\u6807\u51C6 CRUD
+`,paraId:152,tocIndex:65},{value:"\u4F8B\u5982\uFF1A",paraId:153,tocIndex:65},{value:"\u5546\u54C1",paraId:154,tocIndex:65},{value:"\u5206\u7C7B",paraId:154,tocIndex:65},{value:"\u7528\u6237\u7BA1\u7406",paraId:154,tocIndex:65},{value:"\u6807\u7B7E",paraId:154,tocIndex:65},{value:"\u540E\u53F0\u7BA1\u7406",paraId:154,tocIndex:65},{value:"\u9002\u5408\uFF1A",paraId:155,tocIndex:66},{value:`\u590D\u6742\u4E1A\u52A1\u63A5\u53E3
+`,paraId:156,tocIndex:66},{value:"\u4F8B\u5982\uFF1A",paraId:157,tocIndex:66},{value:"\u767B\u5F55",paraId:158,tocIndex:66},{value:"\u652F\u4ED8",paraId:158,tocIndex:66},{value:"IM",paraId:158,tocIndex:66},{value:"\u5728\u7EBF\u72B6\u6001",paraId:158,tocIndex:66},{value:"\u6587\u4EF6\u4E0A\u4F20",paraId:158,tocIndex:66},{value:"AI",paraId:158,tocIndex:66},{value:"WebSocket",paraId:158,tocIndex:66},{value:"\u4F7F\u7528\uFF1A",paraId:159,tocIndex:68},{value:`ViewSet
+`,paraId:160,tocIndex:68},{value:"\u4F7F\u7528\uFF1A",paraId:161,tocIndex:69},{value:`APIView
+`,paraId:162,tocIndex:69},{value:"\u4F60\u73B0\u5728\uFF1A",paraId:163,tocIndex:70},{value:"\u5728\u7EBF\u72B6\u6001\u7CFB\u7EDF\u3002",paraId:164,tocIndex:70},{value:"\u63A8\u8350\uFF1A",paraId:165,tocIndex:70},{value:"\u4F8B\u5982\uFF1A",paraId:166,tocIndex:71},{value:`class HeartbeatView(APIView)
+`,paraId:167,tocIndex:72},{value:`class OnlineUsersView(APIView)
+`,paraId:168,tocIndex:73},{value:`class OfflineView(APIView)
+`,paraId:169,tocIndex:74},{value:`\u9002\u5408 CRUD
+\u81EA\u52A8\u5316\u5F3A
+\u4EE3\u7801\u5C11
+`,paraId:170,tocIndex:76},{value:`\u9002\u5408\u590D\u6742\u4E1A\u52A1
+\u66F4\u7075\u6D3B
+\u66F4\u9002\u5408\u5927\u578B\u9879\u76EE
+`,paraId:171,tocIndex:77},{value:`APIView \u4E5F\u5F3A\u70C8\u63A8\u8350\u4F7F\u7528
+`,paraId:172,tocIndex:78},{value:`APIView \u548C ViewSet \u5B8C\u5168\u4E00\u6837
+`,paraId:173,tocIndex:79},{value:"\u5927\u578B\u9879\u76EE\uFF1A",paraId:174,tocIndex:80},{value:"\u6700\u7EC8\uFF1A",paraId:175,tocIndex:80},{value:"\u5927\u591A\u6570\u6838\u5FC3\u4E1A\u52A1\uFF1A",paraId:176,tocIndex:80},{value:"\u5176\u5B9E\u90FD\u4F1A\uFF1A",paraId:177,tocIndex:80},{value:`\u56DE\u5F52 APIView
+`,paraId:178,tocIndex:80},{value:"\u56E0\u4E3A\uFF1A",paraId:179,tocIndex:80},{value:"\u4E1A\u52A1\u590D\u6742\u5EA6\u8FDC\u8FDC\u8D85\u8FC7 CRUD\u3002",paraId:180,tocIndex:80}]},65304:function(I,e,a){a.r(e),a.d(e,{texts:function(){return d}});const d=[{value:"\u672C\u6587\u9002\u5408\uFF1A",paraId:0,tocIndex:0},{value:"Django \u65B0\u624B",paraId:1,tocIndex:0},{value:"Python \u540E\u7AEF\u65B0\u624B",paraId:1,tocIndex:0},{value:"\u7B2C\u4E00\u6B21\u4F7F\u7528 Celery",paraId:1,tocIndex:0},{value:"\u7B2C\u4E00\u6B21\u505A\u5B9A\u65F6\u4EFB\u52A1",paraId:1,tocIndex:0},{value:"\u7B2C\u4E00\u6B21\u505A Redis \u5728\u7EBF\u72B6\u6001",paraId:1,tocIndex:0},{value:"\u76EE\u6807\uFF1A",paraId:2,tocIndex:0},{value:"\u4ECE\u96F6\u5F7B\u5E95\u7406\u89E3\uFF1A",paraId:3,tocIndex:0},{value:"Celery \u662F\u4EC0\u4E48",paraId:4,tocIndex:0},{value:"Beat \u662F\u4EC0\u4E48",paraId:4,tocIndex:0},{value:"Worker \u662F\u4EC0\u4E48",paraId:4,tocIndex:0},{value:"Redis \u5728\u91CC\u9762\u5E72\u4EC0\u4E48",paraId:4,tocIndex:0},{value:"Django \u5982\u4F55\u914D\u7F6E\u5B9A\u65F6\u4EFB\u52A1",paraId:4,tocIndex:0},{value:"\u5982\u4F55\u505A\u5728\u7EBF\u7528\u6237\u6E05\u7406",paraId:4,tocIndex:0},{value:"\u5B9A\u65F6\u4EFB\u52A1\uFF1A",paraId:5,tocIndex:1},{value:"\u5C31\u662F\uFF1A",paraId:6,tocIndex:1},{value:"\u5230\u67D0\u4E2A\u65F6\u95F4\u81EA\u52A8\u6267\u884C\u4EE3\u7801\u3002",paraId:7,tocIndex:1},{value:"\u4F8B\u5982\uFF1A",paraId:8,tocIndex:1},{value:"\u573A\u666F",paraId:9,tocIndex:1},{value:"\u793A\u4F8B",paraId:9,tocIndex:1},{value:"\u5728\u7EBF\u72B6\u6001\u6E05\u7406",paraId:9,tocIndex:1},{value:"\u6BCF\u5206\u949F\u6E05\u7406\u79BB\u7EBF\u7528\u6237",paraId:9,tocIndex:1},{value:"\u8BA2\u5355\u8D85\u65F6",paraId:9,tocIndex:1},{value:"30\u5206\u949F\u672A\u652F\u4ED8\u81EA\u52A8\u53D6\u6D88",paraId:9,tocIndex:1},{value:"\u7F13\u5B58\u5237\u65B0",paraId:9,tocIndex:1},{value:"\u6BCF10\u5206\u949F\u5237\u65B0\u7F13\u5B58",paraId:9,tocIndex:1},{value:"\u6570\u636E\u7EDF\u8BA1",paraId:9,tocIndex:1},{value:"\u6BCF\u5929\u51CC\u6668\u7EDF\u8BA1\u62A5\u8868",paraId:9,tocIndex:1},{value:"\u90AE\u4EF6\u53D1\u9001",paraId:9,tocIndex:1},{value:"\u6BCF\u59299\u70B9\u53D1\u9001\u90AE\u4EF6",paraId:9,tocIndex:1},{value:"Django\uFF1A",paraId:10,tocIndex:2},{value:"\u672C\u8EAB\u662F\uFF1A",paraId:11,tocIndex:2},{value:`Web\u6846\u67B6
 `,paraId:12,tocIndex:2},{value:"\u8D1F\u8D23\uFF1A",paraId:13,tocIndex:2},{value:"HTTP \u8BF7\u6C42",paraId:14,tocIndex:2},{value:"API",paraId:14,tocIndex:2},{value:"\u6570\u636E\u5E93",paraId:14,tocIndex:2},{value:"\u4F46\uFF1A",paraId:15,tocIndex:2},{value:"\u4E0D\u8D1F\u8D23\u540E\u53F0\u957F\u671F\u8FD0\u884C\u4EFB\u52A1\u3002",paraId:16,tocIndex:2},{value:"\u6240\u4EE5\uFF1A",paraId:17,tocIndex:2},{value:"\u9700\u8981\uFF1A",paraId:18,tocIndex:2},{value:`Celery
 `,paraId:19,tocIndex:2},{value:"Celery",paraId:20,tocIndex:3},{value:"Celery\uFF1A",paraId:21,tocIndex:3},{value:"\u662F Python \u6700\u6D41\u884C\u7684\uFF1A",paraId:22,tocIndex:3},{value:`\u5F02\u6B65\u4EFB\u52A1\u6846\u67B6
 `,paraId:23,tocIndex:3},{value:"\u4F5C\u7528\uFF1A",paraId:24,tocIndex:3},{value:"\u540E\u53F0\u6267\u884C\u4EFB\u52A1",paraId:25,tocIndex:3},{value:"\u5B9A\u65F6\u4EFB\u52A1",paraId:25,tocIndex:3},{value:"\u5F02\u6B65\u4EFB\u52A1",paraId:25,tocIndex:3},{value:"\u5EF6\u8FDF\u4EFB\u52A1",paraId:25,tocIndex:3},{value:"Celery \u6709\u4E09\u4E2A\u6838\u5FC3\u89D2\u8272\uFF1A",paraId:26,tocIndex:4},{value:"\u89D2\u8272",paraId:27,tocIndex:4},{value:"\u4F5C\u7528",paraId:27,tocIndex:4},{value:"Django",paraId:27,tocIndex:4},{value:"\u4EA7\u751F\u4EFB\u52A1",paraId:27,tocIndex:4},{value:"Beat",paraId:27,tocIndex:4},{value:"\u5B9A\u65F6\u53D1\u9001\u4EFB\u52A1",paraId:27,tocIndex:4},{value:"Worker",paraId:27,tocIndex:4},{value:"\u771F\u6B63\u6267\u884C\u4EFB\u52A1",paraId:27,tocIndex:4},{value:"Redis",paraId:27,tocIndex:4},{value:"\u6D88\u606F\u961F\u5217",paraId:27,tocIndex:4},{value:"\u5F88\u591A\u65B0\u624B\u6700\u5927\u8BEF\u533A\uFF1A",paraId:28,tocIndex:5},{value:"\u4EE5\u4E3A\uFF1A",paraId:29,tocIndex:5},{value:`Beat \u4F1A\u6267\u884C\u4EE3\u7801
