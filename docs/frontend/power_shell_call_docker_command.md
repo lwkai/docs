@@ -68,3 +68,67 @@ wsl docker exec -it df519ca1dd6a bash -c "cd /workspace/frontend && npm run buil
 
 2. **容器启动状态**：
 * 执行前请确保该 Docker 容器处于运行状态（`running`）。如果容器已停止，可在 PowerShell 中运行 `wsl docker start df519ca1dd6a` 先启动容器。
+
+
+
+
+出现类似这样的错误：
+```
+Error response from daemon: container 55ed5af298355ed8cae7cfbfd37188705220abbaa0430114e689970eeabf62e9 is not running
+
+
+[已退出进程，代码为 1 (0x00000001)]
+
+现在可以使用Ctrl+D关闭此终端，或按 Enter 重新启动。
+```
+
+
+出现这个错误的直接原因是：**你的 Docker 容器当前处于“停止/未运行”（Status: Exited）状态**。`docker exec` 命令要求目标容器必须处于运行中才能进入并执行代码。
+
+为了在点击 Windows Terminal 配置文件时**能够自动将未运行的容器启动**，同时继续保留上一步“防止内存溢出”和“失败后不退出终端”的功能，可以在命令中加入 `docker start` 逻辑。
+
+---
+
+### 解决方案：在命令中增加自动启动容器机制
+
+将 Windows Terminal 配置文件中的命令行（Command line）替换为以下内容：
+
+```powershell
+%SystemRoot%\System32\wsl.exe bash -c "docker start 55ed5af29835 > /dev/null 2>&1 && docker exec -it 55ed5af29835 bash -c 'export NODE_OPTIONS=\"--max-old-space-size=4096\" && cd /workspace && npm run dev; exec bash'"
+
+```
+
+---
+
+### 命令执行逻辑拆解
+
+1. **`docker start 55ed5af29835 > /dev/null 2>&1`**：
+* 在执行 `exec` 之前，先尝试启动容器。
+* 如果容器已经是运行状态，该命令会静默跳过；如果容器已停止，会自动将它拉起（避免报 `container is not running`）。
+
+
+2. **`&&`**：
+* 保证容器启动成功后，才接着执行后面的操作。
+
+
+3. **`docker exec -it 55ed5af29835 ...`**：
+* 进入容器，提高 Node.js 内存限制（防止 137 错误），进入 `/workspace` 目录并启动 `npm run dev`。
+
+
+4. **`; exec bash`**：
+* 即使 `npm run dev` 意外崩溃，依然保留在容器内的 `bash` 提示符下，防止窗口直接挂掉并弹出 exit 报错。
+
+
+
+---
+
+### 终极优化建议：使用容器名称代替容器 ID（推荐）
+
+容器 ID（如 `55ed5af29835`）在容器销毁、重新构建或通过 Dev Containers 重新挂载后很容易改变。建议在容器启动时赋予它一个固定的名称（或者在 Docker Desktop / VS Code 中查看它的 **NAME**，例如 `my-dev-container`）。
+
+如果使用容器名称（例如 `my-dev-container`），配置命令会更加稳定且易读：
+
+```powershell
+%SystemRoot%\System32\wsl.exe bash -c "docker start my-dev-container > /dev/null 2>&1 && docker exec -it my-dev-container bash -c 'export NODE_OPTIONS=\"--max-old-space-size=4096\" && cd /workspace && npm run dev; exec bash'"
+
+```
