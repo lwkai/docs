@@ -4,7 +4,7 @@ import theme from './theme.js'
 import { stripOrderPrefix } from './shared/utils.js'
 
 export default defineUserConfig({
-  base: '/',
+  base: '/docs/',
 
   port: 3008,
   lang: 'zh-CN',
