@@ -9,3 +9,4 @@ docs/.vuepress/server/out.log
 docs/.vuepress/server/process.log
 .workbuddy/
 /docs_bak
+/.vscode
