@@ -1,3 +1,9 @@
+---
+title: POM 依赖配置
+icon: mdi:database-outline
+sort: 3
+---
+
 # POM 依赖配置
 
 ## spring-boot-configuration-processor

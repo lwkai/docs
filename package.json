@@ -1,0 +1,31 @@
+{
+  "name": "note",
+  "version": "2.0.0",
+  "description": "A project of vuepress-theme-hope",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "vuepress-vite dev docs",
+    "docs:build": "vuepress-vite build docs",
+    "docs:clean-dev": "vuepress-vite dev docs --clean-cache",
+    "docs:dev": "vuepress-vite dev docs",
+    "docs:update-package": "pnpm dlx vp-update",
+    "docker": "docker-compose up -d",
+    "git:auto": "start /b \"\" .\\git-auto-push.bat"
+  },
+  "devDependencies": {
+    "@vuepress/bundler-vite": "2.0.0-rc.30",
+    "@vuepress/plugin-shiki": "2.0.0-rc.0",
+    "@vuepress/plugin-slimsearch": "2.0.0-rc.131",
+    "front-matter": "^4.0.2",
+    "mermaid": "^11.17.2",
+    "sass-embedded": "^1.100.0",
+    "vue": "^3.5.41",
+    "vuepress": "2.0.0-rc.30",
+    "vuepress-theme-hope": "2.0.0-rc.107"
+  },
+  "packageManager": "pnpm@10.30.3",
+  "dependencies": {
+    "@iconify/vue": "^5.0.1"
+  }
+}

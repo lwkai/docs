@@ -1,3 +1,8 @@
+---
+title: JPA
+icon: mdi:database-outline
+sort: 2
+---
 # JPA
 
 

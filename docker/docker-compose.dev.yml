@@ -1,0 +1,18 @@
+services:
+  note-md-dev:
+    container_name: note-md-dev
+    build:
+      context: ..
+      dockerfile: ./docker/Dockerfile.dev
+    tty: true
+    stdin_open: true
+    volumes:
+      # - vscode-server:/home/ubuntu/.vscode-server
+      - bash-history:/commandhistory
+    ports:
+      - "3008:3008"
+volumes:
+  # vscode-server:
+  #   name: vscode-server
+  bash-history:
+    name: bash-history
