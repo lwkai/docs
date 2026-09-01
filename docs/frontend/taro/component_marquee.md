@@ -145,12 +145,12 @@ import './LoopMarquee.scss';
 
 const COLORS = 4; // 配色循环数（hot_tag_0 ~ hot_tag_3）
 
-export function LoopMarquee({ items }: { items: { id: string; label: string }[] }) {
+export function LoopMarquee({ lists }: { lists: { id: string; label: string }[] }) {
   const uid = useMarqueeUid();
   const { trackRef, onTouchStart, onTouchMove, onTouchEnd } =
-    useLoopScroll(items, uid);
+    useLoopScroll(lists, uid);
 
-  if (!items.length) return null;
+  if (!lists.length) return null;
 
   // 关键：配色相位绑定「标签原始下标 k」，第二份复制也传 k（不传 k+len）
   const renderItem = (it: { id: string; label: string }, k: number) => (
@@ -175,8 +175,8 @@ export function LoopMarquee({ items }: { items: { id: string; label: string }[] 
           ref={(el) => { trackRef.current = el as unknown as HTMLElement; }}
         >
           {/* 复制两份实现无缝；第二份传同样的 k → 配色与第一份逐位对齐 */}
-          {items.map((it, k) => renderItem(it, k))}
-          {items.map((it, k) => renderItem(it, k))}
+          {lists.map((it, k) => renderItem(it, k))}
+          {lists.map((it, k) => renderItem(it, k))}
         </View>
       </View>
     </View>
@@ -233,8 +233,8 @@ export function LoopMarquee({ items }: { items: { id: string; label: string }[] 
 
 ```tsx
 // 页面中
-<LoopMarquee items={hotTagsA} ></LoopMarquee>
-<LoopMarquee items={hotTagsB} ></LoopMarquee> // 第二个实例用独立 uid，查询互不干扰
+<LoopMarquee lists={hotTagsA} ></LoopMarquee>
+<LoopMarquee lists={hotTagsB} ></LoopMarquee> // 第二个实例用独立 uid，查询互不干扰
 ```
 
 ---
