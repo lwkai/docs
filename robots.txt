@@ -1,4 +1,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://docs.cqlql.top/sitemap.xml
+Sitemap: https://docs.cqlql.top/docs/sitemap.xml
