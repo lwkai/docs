@@ -233,8 +233,8 @@ export function LoopMarquee({ items }: { items: { id: string; label: string }[] 
 
 ```tsx
 // 页面中
-<LoopMarquee items={hotTagsA} />
-<LoopMarquee items={hotTagsB} /> // 第二个实例用独立 uid，查询互不干扰
+<LoopMarquee items={hotTagsA} ></LoopMarquee>
+<LoopMarquee items={hotTagsB} ></LoopMarquee> // 第二个实例用独立 uid，查询互不干扰
 ```
 
 ---
