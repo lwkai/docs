@@ -20,7 +20,7 @@ sort: 0
 
 **一个 DTO / record 的字段“是否必填”，从来不是由字段声明本身决定的。** 比如你看到的 `RelationGenerateRequest`：
 
-```12:36:src/main/java/com/xiaodingtie/feeling/modules/relation/dto/RelationGenerateRequest.java
+```java
 public record RelationGenerateRequest(
         List<RelationEngineService.RelationInput> inputs,
         String problemType,
